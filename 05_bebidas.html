@@ -7,11 +7,19 @@
     */
 
     //Entrada
+let bebidas = ["Cerveja", "Vinho", "Suco Natural", "Tequila", "Água", "Refrigerante", "Vodka"];
+let semAlcool = [];
 
 
     //Processamento
+for(let bebida of bebidas){
+    let alcool = prompt(`${bebida} possui álcool? S-Sim /N-Não `).trim().toLowerCase();
+    if (alcool === "não" || alcool === "n"){
+        semAlcool.push(bebida);
+    }
 
+}
 
     //Saída
-
+alert(semAlcool.join(", "));
 </script>
