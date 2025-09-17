@@ -6,11 +6,18 @@
     */
 
     //Entrada
-
-
+const vogais = ["a","o","i","e","u"];
+const palavra = prompt("Escreva uma palavra:").trim().toLowerCase();
+let quantidadeDeVogais = 0;
+let quantidadeDeConsoantes = 0;
     //Processamento
-
-
+for(let letra of palavra){
+    if(vogais.includes(letra) === true){
+        quantidadeDeVogais ++;
+    } else {
+        quantidadeDeConsoantes++;
+    }
+}
     //Saída
-
+document.write(`Vogais quantidade: ${quantidadeDeVogais} <br> Consoantes quantidade: ${quantidadeDeConsoantes}`);
 </script>
