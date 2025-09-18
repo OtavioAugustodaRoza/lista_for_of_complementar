@@ -8,9 +8,19 @@
     */
 
     //Entrada
-
-
+let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+let estados = {};
     //Processamento
+for(let cidade of cidades){
+    let estado = prompt(`Qual estado pertence ${cidade}?`).trim().toUpperCase();
+    if(!estados[estado]){
+    estados[estado] = [];
+}
+estados[estado].push(cidade);
+
+}
+//não sei como posso fazer o resto vou dar uma estudada depois ver se eu aprendo bem objetos
+//talvez tenha maneira mais fácil de fazer mas essa foi a unica que eu pensei.
 
 
     //Saída
