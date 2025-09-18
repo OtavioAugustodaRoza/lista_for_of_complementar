@@ -9,18 +9,29 @@
 
     //Entrada
 let nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
-let vogaisComAcento = ["á","é","í","ó","ú"];
+let nomesSemAcento = [];
 
     //Processamento
 for(let nome of nomes){
+    let nomeSemAcento ="";
     for(let letra of nome){
-        
-
+        if(letra.toLowerCase() === "á"){
+            nomeSemAcento += "a";
+        }else if(letra.toLowerCase() === "é" ){
+            nomeSemAcento += "e";
+        }else if(letra.toLowerCase() === "í"){
+            nomeSemAcento += "i";
+        }else if(letra.toLowerCase() === "ó"){
+            nomeSemAcento += "o";
+        }else if(letra.toLowerCase() === "ú"){
+            nomeSemAcento += "u"
+        }else{
+            nomeSemAcento+=letra;
+        }
     }
-    
-   
+    nomesSemAcento.push(nomeSemAcento);
 }
 
     //Saída
-
+alert(nomesSemAcento.join(", "));
 </script>
