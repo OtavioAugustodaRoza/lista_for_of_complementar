@@ -2,26 +2,31 @@
     //Problema: Cidades e Estados
     /*
     Considere a seguinte lista de Cidades:
-    let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+    let cidades = [Porto Alegre, Curitiba, Florianópolis, Joinville, Blumenau, Gramado, Santa Maria, Londrina, Itajaí];
     Pergunte ao usuário a qual estado pertence cada uma das cidades e adicione em listas separadas, sendo uma lista para cada estado.
     No final do programa apresente os estados com as suas respectivas cidades. Porém, ordene a apresentação das listas, apresentando de forma decrescente pela quantidade de cidades que o estado possui.
     */
 
     //Entrada
-let cidades = ["Porto Alegre", "Curitiba", "Florianópolis", "Joinville", "Blumenau", "Gramado", "Santa Maria", "Londrina", "Itajaí"];
+let cidades = [{cidade:"PortoAlegre"}, {cidade:"Curitiba"}, {cidade:"Florianópolis"}, {cidade:"Joinville"}, {cidade:"Blumenau"}, {cidade:"Gramado"}, {cidade:"Santa Maria"}, {cidade:"Londrina"}, {cidade:"Itajaí"}];
 let estados = {};
-    //Processamento
-for(let cidade of cidades){
-    let estado = prompt(`Qual estado pertence ${cidade}?`).trim().toUpperCase();
-    if(!estados[estado]){
-    estados[estado] = [];
-}
-estados[estado].push(cidade);
-}
-//não sei como posso fazer o resto 
-//talvez tenha maneira mais fácil de fazer
 
+
+    //Processamento
+for(let city of cidades){
+    let state = prompt(`Qual estado pertence ${city.cidade}?`).trim().toUpperCase();
+    city.estado = state;
+    if(!estados[state]){
+     estados[state] = [];
+} else{
+    estados[state].push(city.cidade);
+}
+}
+listaDosEstados = Object.entries(estados);
+listaDosEstados.sort((a,b) => b[1].length - a[1].length);
 
     //Saída
-
+    for(let [estado, cidades] of listaDosEstados){
+        document.write(` ${estado}: ${cidades.join(", ")} <br>`)
+    }
 </script>
